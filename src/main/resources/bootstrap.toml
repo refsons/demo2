@@ -1,0 +1,4 @@
+
+[micronaut]
+application.name = 'demo2'
+config-client.enabled = true

@@ -1,0 +1,23 @@
+netty.default.allocator.max-order = 3
+micronaut.metrics.enabled = true
+
+[micronaut.metrics.export.stackdriver]
+enabled = true
+projectId = '${STACKDRIVER_PROJECT_ID}'
+step = 'PT1M'
+
+[micronaut.router.static-resources.swagger]
+paths = 'classpath:META-INF/swagger'
+mapping = '/swagger/**'
+
+[micronaut.router.static-resources.swagger-ui]
+paths = 'classpath:META-INF/swagger/views/swagger-ui'
+mapping = '/swagger-ui/**'
+
+[micronaut.security]
+authentication = 'bearer'
+token.jwt.signatures.secret.generator.secret = '${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}'
+
+[micronaut.session.http]
+cookie = true
+header = true
